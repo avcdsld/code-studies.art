@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コードアート研究会 | Code Art Studies</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&display=swap');
+        
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #333333;
+            --accent-color: #555555;
+            --border-color: #dddddd;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #121212;
+                --text-color: #e0e0e0;
+                --accent-color: #aaaaaa;
+                --border-color: #333333;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif JP', serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            padding: 0;
+            margin: 0;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            margin: 4rem 0 5rem;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            letter-spacing: 0.12em;
+            color: var(--accent-color);
+            font-family: 'EB Garamond', serif;
+            font-weight: 400;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        h2 {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            letter-spacing: 0.05em;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            text-justify: inter-ideograph;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .theme-item {
+            margin-bottom: 2rem;
+        }
+
+        .theme-title {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+            font-family: 'EB Garamond', 'Noto Serif JP', serif;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 0.5em;
+            height: 1.2em;
+            background-color: var(--text-color);
+            vertical-align: middle;
+            margin-left: 0.2em;
+            opacity: 0.7;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 0; }
+        }
+
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            body {
+                font-size: 15px;
+            }
+        }
+
+        .event-section {
+            margin-top: 3rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .event-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        .event-details {
+            margin-bottom: 1rem;
+        }
+
+        .event-detail {
+            margin-bottom: 0.5rem;
+            display: flex;
+        }
+
+        .event-label {
+            width: 80px;
+            font-weight: 500;
+        }
+        
+        .declaration-title {
+            font-size: 1.4rem;
+            margin: 1rem 0 2rem;
+            text-align: center;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            border-bottom: none;
+        }
+        
+        .social-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .social-link:hover {
+            text-decoration: underline;
+            color: var(--text-color);
+        }
+        
+        .founder {
+            margin: 5rem 0;
+            text-align: center;
+            font-style: normal;
+            font-weight: 500;
+        }
+        
+        .date {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">CODE-STUDIES.ART</div>
+            <h1 class="title">コードアート研究会<span class="cursor"></span></h1>
+        </header>
+
+        <section>
+            <h2>理念</h2>
+            <p>コードは単なる機能的な指示の集合を超えた存在である。私たちはコードの中に、実用的な側面を超えた、言語そのものの可能性を追求する実践を見出す。既存の芸術ジャンルでは捉えきれない、コード特有の思考や創造の可能性を探究する。</p>
+        </section>
+
+        <section>
+            <h2>目的</h2>
+            <p>この研究会は、プログラマー、アーティスト、詩人、思想家など、コードに多様な視点から惹かれた人々が集い、コードとの関わりを深め、新たな思考と創造の場を開拓することを目指す。</p>
+        </section>
+
+        <section>
+            <h2>探究テーマ</h2>
+            <p>私たちは以下のような問いを共有し、探究する：</p>
+
+            <div class="theme-item">
+                <div class="theme-title">コードと詩</div>
+                <p>自然言語による言語そのものの芸術的探求が詩であるなら、コードによる言語そのものの芸術的探求もまた詩である。自然言語が到達できない領域にコードは踏み込めるのか。言語の限界と可能性を探る。</p>
+            </div>
+
+            <div class="theme-item">
+                <div class="theme-title">コードの発掘と再解釈</div>
+                <p>実験的・創造的なプログラムを掘り起こし読み解くことで、コードアートの歴史を捉え直し、コードという媒体固有の思考と創作の可能性を探る。既存の解釈を超えた視点からの読み直しや創造的な再実装を通じて、新たな意味を見出す。</p>
+            </div>
+
+            <div class="theme-item">
+                <div class="theme-title">書き手と読み手</div>
+                <p>コードは人間の理解と機械の実行という異なる読者を持つ。人間のためのわかりやすさと機械のための正確さが同居するコードの二面性から生まれる可能性を探る。</p>
+            </div>
+
+            <div class="theme-item">
+                <div class="theme-title">思考の具現化と変容</div>
+                <p>コードを書くことは抽象的な概念を具体的な形で具現化する行為であり、その過程で思考そのものが変容する。コードを通して未知の思考や感覚を発見する営みでもある。</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>アプローチ</h2>
+            <p>私たちは既存のジャンル区分や評価基準に縛られず、コードという媒体が持つ固有の可能性を探求する。それは時に実験的で、予測不可能な結果をもたらすかもしれない。</p>
+            <p>この研究会は、コードを芸術の言葉に翻訳するのではなく、コードそのものを通して新たな思考と創造の形式を見出すことを目指している。コードの構造、記述の簡潔さ、概念的な深さだけでなく、時にはその曖昧さや複雑さ、実行不能性といった側面にも光を当て、その発展に積極的に関与していきたい。</p>
+        </section>
+
+        <section>
+            <h2>実践</h2>
+            <ul>
+                <li>輪読会・勉強会とディスカッション</li>
+                <li>コードアートの作品制作と発表</li>
+                <li>学際的な共同プロジェクト</li>
+                <li>作品のアーカイブとドキュメント化</li>
+                <li>コードの創造的な解釈と実験的な再実装</li>
+            </ul>
+            <p>私たちはコードを書く人、読む人、実行する人、そして新たな視点でコードと対話したいすべての人々に開かれている。コードとの新しい関係を探求したい方の参加を待っている。</p>
+        </section>
+
+        <section class="event-section">
+            <h3 class="event-title">第一回 コードアート研究会 勉強会を企画中です。</h3>
+            <p>詳細はこちらの <a href="https://x.com/arandoros" target="_blank" class="social-link">X アカウント</a>をご確認ください。</p>
+        </section>
+        
+        <div class="founder">
+            <p>荒川 零一</p>
+            <p class="date">2025年3月29日</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 コードアート研究会 | Code Art Studies</p>
+    </footer>
+</body>
+</html> 
